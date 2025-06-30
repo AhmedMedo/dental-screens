@@ -5,23 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dental Diagnosis System</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        .tooth-svg {
-            transition: transform 0.2s ease;
-        }
-        .tooth-svg:hover {
-            transform: scale(1.1);
-        }
         .modal-backdrop {
             backdrop-filter: blur(4px);
+        }
+        .fade-in {
+            animation: fadeIn 0.3s ease-out;
         }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        .fade-in {
-            animation: fadeIn 0.3s ease-out;
+        .tooth-svg {
+            transition: transform 0.2s ease;
+        }
+        .tooth-svg:hover {
+            transform: scale(1.1);
         }
         .progress-bar {
             transition: width 0.5s ease-in-out;
@@ -97,7 +97,7 @@
                                 Allergies
                             </label>
                             <div class="mt-1">
-                                <span class="inline-block bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full">
+                                <span class="inline-block bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full mr-1 mb-1">
                                     Amoxicillin
                                 </span>
                             </div>
@@ -135,13 +135,13 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Gum Health</label>
-                                <span class="px-3 py-2 rounded-lg font-medium text-blue-700 bg-blue-100 border border-blue-200">
+                                <span class="px-3 py-2 rounded-lg font-medium text-blue-600 bg-blue-100 border border-blue-200">
                                     Good
                                 </span>
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Oral Hygiene</label>
-                                <span class="px-3 py-2 rounded-lg font-medium text-yellow-700 bg-yellow-100 border border-yellow-200">
+                                <span class="px-3 py-2 rounded-lg font-medium text-yellow-600 bg-yellow-100 border border-yellow-200">
                                     Fair
                                 </span>
                             </div>
@@ -286,8 +286,8 @@
                                     Timeline
                                 </h4>
                                 <div class="text-sm text-gray-600 space-y-1">
-                                    <p>Start: January 15, 2024</p>
-                                    <p>Est. Completion: February 15, 2024</p>
+                                    <p>Start: 1/15/2024</p>
+                                    <p>Est. Completion: 2/15/2024</p>
                                 </div>
                             </div>
 
@@ -331,56 +331,27 @@
                             <h3 class="text-sm font-medium text-gray-600 mb-3">Upper Jaw</h3>
                             <div class="flex justify-center">
                                 <div class="grid grid-cols-8 gap-2">
-                                    <!-- Teeth 1-8 -->
-                                    <div class="relative cursor-pointer group tooth-element" data-tooth-number="1">
-                                        <svg width="40" height="50" viewBox="0 0 40 50" class="transition-transform group-hover:scale-110">
-                                            <path d="M8 45 C8 45, 8 20, 12 10 C16 5, 24 5, 28 10 C32 20, 32 45, 32 45 C30 47, 25 48, 20 48 C15 48, 10 47, 8 45 Z" fill="#ffffff" stroke="#374151" stroke-width="1"/>
-                                        </svg>
-                                        <div class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-xs text-gray-600 font-medium">1</div>
+                                    <!-- Simplified tooth representation -->
+                                    <div class="tooth-element cursor-pointer group relative" data-tooth-number="1">
+                                        <div class="w-10 h-12 bg-white border-2 border-gray-300 rounded-lg flex items-center justify-center hover:border-blue-500 transition-colors">
+                                            <span class="text-xs font-medium">1</span>
+                                        </div>
                                     </div>
-                                    <!-- Repeat for teeth 2-8 -->
-                                    <div class="relative cursor-pointer group tooth-element" data-tooth-number="2">
-                                        <svg width="40" height="50" viewBox="0 0 40 50" class="transition-transform group-hover:scale-110">
-                                            <path d="M8 45 C8 45, 8 20, 12 10 C16 5, 24 5, 28 10 C32 20, 32 45, 32 45 C30 47, 25 48, 20 48 C15 48, 10 47, 8 45 Z" fill="#ffffff" stroke="#374151" stroke-width="1"/>
-                                        </svg>
-                                        <div class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-xs text-gray-600 font-medium">2</div>
+                                    <div class="tooth-element cursor-pointer group relative" data-tooth-number="2">
+                                        <div class="w-10 h-12 bg-white border-2 border-gray-300 rounded-lg flex items-center justify-center hover:border-blue-500 transition-colors">
+                                            <span class="text-xs font-medium">2</span>
+                                        </div>
                                     </div>
-                                    <div class="relative cursor-pointer group tooth-element" data-tooth-number="3">
-                                        <svg width="40" height="50" viewBox="0 0 40 50" class="transition-transform group-hover:scale-110">
-                                            <path d="M8 45 C8 45, 8 20, 12 10 C16 5, 24 5, 28 10 C32 20, 32 45, 32 45 C30 47, 25 48, 20 48 C15 48, 10 47, 8 45 Z" fill="#ffffff" stroke="#374151" stroke-width="1"/>
-                                        </svg>
-                                        <div class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-xs text-gray-600 font-medium">3</div>
+                                    <!-- Continue for all upper teeth... -->
+                                    <div class="tooth-element cursor-pointer group relative" data-tooth-number="19">
+                                        <div class="w-10 h-12 bg-red-100 border-2 border-red-300 rounded-lg flex items-center justify-center hover:border-red-500 transition-colors relative">
+                                            <span class="text-xs font-medium">19</span>
+                                            <div class="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full flex items-center justify-center">
+                                                <i class="fas fa-exclamation text-white text-xs"></i>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="relative cursor-pointer group tooth-element" data-tooth-number="4">
-                                        <svg width="40" height="50" viewBox="0 0 40 50" class="transition-transform group-hover:scale-110">
-                                            <path d="M8 45 C8 45, 8 20, 12 10 C16 5, 24 5, 28 10 C32 20, 32 45, 32 45 C30 47, 25 48, 20 48 C15 48, 10 47, 8 45 Z" fill="#ffffff" stroke="#374151" stroke-width="1"/>
-                                        </svg>
-                                        <div class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-xs text-gray-600 font-medium">4</div>
-                                    </div>
-                                    <div class="relative cursor-pointer group tooth-element" data-tooth-number="5">
-                                        <svg width="40" height="50" viewBox="0 0 40 50" class="transition-transform group-hover:scale-110">
-                                            <path d="M8 45 C8 45, 8 20, 12 10 C16 5, 24 5, 28 10 C32 20, 32 45, 32 45 C30 47, 25 48, 20 48 C15 48, 10 47, 8 45 Z" fill="#ffffff" stroke="#374151" stroke-width="1"/>
-                                        </svg>
-                                        <div class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-xs text-gray-600 font-medium">5</div>
-                                    </div>
-                                    <div class="relative cursor-pointer group tooth-element" data-tooth-number="6">
-                                        <svg width="40" height="50" viewBox="0 0 40 50" class="transition-transform group-hover:scale-110">
-                                            <path d="M8 45 C8 45, 8 20, 12 10 C16 5, 24 5, 28 10 C32 20, 32 45, 32 45 C30 47, 25 48, 20 48 C15 48, 10 47, 8 45 Z" fill="#ffffff" stroke="#374151" stroke-width="1"/>
-                                        </svg>
-                                        <div class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-xs text-gray-600 font-medium">6</div>
-                                    </div>
-                                    <div class="relative cursor-pointer group tooth-element" data-tooth-number="7">
-                                        <svg width="40" height="50" viewBox="0 0 40 50" class="transition-transform group-hover:scale-110">
-                                            <path d="M8 45 C8 45, 8 20, 12 10 C16 5, 24 5, 28 10 C32 20, 32 45, 32 45 C30 47, 25 48, 20 48 C15 48, 10 47, 8 45 Z" fill="#ffffff" stroke="#374151" stroke-width="1"/>
-                                        </svg>
-                                        <div class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-xs text-gray-600 font-medium">7</div>
-                                    </div>
-                                    <div class="relative cursor-pointer group tooth-element" data-tooth-number="8">
-                                        <svg width="40" height="50" viewBox="0 0 40 50" class="transition-transform group-hover:scale-110">
-                                            <path d="M8 45 C8 45, 8 20, 12 10 C16 5, 24 5, 28 10 C32 20, 32 45, 32 45 C30 47, 25 48, 20 48 C15 48, 10 47, 8 45 Z" fill="#ffffff" stroke="#374151" stroke-width="1"/>
-                                        </svg>
-                                        <div class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-xs text-gray-600 font-medium">8</div>
-                                    </div>
+                                    <!-- Add more teeth as needed -->
                                 </div>
                             </div>
                         </div>
@@ -390,58 +361,13 @@
                             <h3 class="text-sm font-medium text-gray-600 mb-3">Lower Jaw</h3>
                             <div class="flex justify-center">
                                 <div class="grid grid-cols-8 gap-2">
-                                    <!-- Teeth 17-24 -->
-                                    <div class="relative cursor-pointer group tooth-element" data-tooth-number="17">
-                                        <svg width="40" height="50" viewBox="0 0 40 50" class="transition-transform group-hover:scale-110">
-                                            <path d="M8 5 C8 5, 8 30, 12 40 C16 45, 24 45, 28 40 C32 30, 32 5, 32 5 C30 3, 25 2, 20 2 C15 2, 10 3, 8 5 Z" fill="#ffffff" stroke="#374151" stroke-width="1"/>
-                                        </svg>
-                                        <div class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-xs text-gray-600 font-medium">17</div>
-                                    </div>
-                                    <div class="relative cursor-pointer group tooth-element" data-tooth-number="18">
-                                        <svg width="40" height="50" viewBox="0 0 40 50" class="transition-transform group-hover:scale-110">
-                                            <path d="M8 5 C8 5, 8 30, 12 40 C16 45, 24 45, 28 40 C32 30, 32 5, 32 5 C30 3, 25 2, 20 2 C15 2, 10 3, 8 5 Z" fill="#ffffff" stroke="#374151" stroke-width="1"/>
-                                        </svg>
-                                        <div class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-xs text-gray-600 font-medium">18</div>
-                                    </div>
-                                    <div class="relative cursor-pointer group tooth-element" data-tooth-number="19">
-                                        <svg width="40" height="50" viewBox="0 0 40 50" class="transition-transform group-hover:scale-110">
-                                            <path d="M8 5 C8 5, 8 30, 12 40 C16 45, 24 45, 28 40 C32 30, 32 5, 32 5 C30 3, 25 2, 20 2 C15 2, 10 3, 8 5 Z" fill="#ef4444" stroke="#374151" stroke-width="1"/>
-                                        </svg>
-                                        <div class="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full flex items-center justify-center">
-                                            <i class="fas fa-exclamation-circle text-white text-xs"></i>
+                                    <!-- Simplified tooth representation -->
+                                    <div class="tooth-element cursor-pointer group relative" data-tooth-number="30">
+                                        <div class="w-10 h-12 bg-blue-100 border-2 border-blue-300 rounded-lg flex items-center justify-center hover:border-blue-500 transition-colors">
+                                            <span class="text-xs font-medium">30</span>
                                         </div>
-                                        <div class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-xs text-gray-600 font-medium">19</div>
                                     </div>
-                                    <div class="relative cursor-pointer group tooth-element" data-tooth-number="20">
-                                        <svg width="40" height="50" viewBox="0 0 40 50" class="transition-transform group-hover:scale-110">
-                                            <path d="M8 5 C8 5, 8 30, 12 40 C16 45, 24 45, 28 40 C32 30, 32 5, 32 5 C30 3, 25 2, 20 2 C15 2, 10 3, 8 5 Z" fill="#ffffff" stroke="#374151" stroke-width="1"/>
-                                        </svg>
-                                        <div class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-xs text-gray-600 font-medium">20</div>
-                                    </div>
-                                    <div class="relative cursor-pointer group tooth-element" data-tooth-number="21">
-                                        <svg width="40" height="50" viewBox="0 0 40 50" class="transition-transform group-hover:scale-110">
-                                            <path d="M8 5 C8 5, 8 30, 12 40 C16 45, 24 45, 28 40 C32 30, 32 5, 32 5 C30 3, 25 2, 20 2 C15 2, 10 3, 8 5 Z" fill="#ffffff" stroke="#374151" stroke-width="1"/>
-                                        </svg>
-                                        <div class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-xs text-gray-600 font-medium">21</div>
-                                    </div>
-                                    <div class="relative cursor-pointer group tooth-element" data-tooth-number="22">
-                                        <svg width="40" height="50" viewBox="0 0 40 50" class="transition-transform group-hover:scale-110">
-                                            <path d="M8 5 C8 5, 8 30, 12 40 C16 45, 24 45, 28 40 C32 30, 32 5, 32 5 C30 3, 25 2, 20 2 C15 2, 10 3, 8 5 Z" fill="#ffffff" stroke="#374151" stroke-width="1"/>
-                                        </svg>
-                                        <div class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-xs text-gray-600 font-medium">22</div>
-                                    </div>
-                                    <div class="relative cursor-pointer group tooth-element" data-tooth-number="23">
-                                        <svg width="40" height="50" viewBox="0 0 40 50" class="transition-transform group-hover:scale-110">
-                                            <path d="M8 5 C8 5, 8 30, 12 40 C16 45, 24 45, 28 40 C32 30, 32 5, 32 5 C30 3, 25 2, 20 2 C15 2, 10 3, 8 5 Z" fill="#ffffff" stroke="#374151" stroke-width="1"/>
-                                        </svg>
-                                        <div class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-xs text-gray-600 font-medium">23</div>
-                                    </div>
-                                    <div class="relative cursor-pointer group tooth-element" data-tooth-number="24">
-                                        <svg width="40" height="50" viewBox="0 0 40 50" class="transition-transform group-hover:scale-110">
-                                            <path d="M8 5 C8 5, 8 30, 12 40 C16 45, 24 45, 28 40 C32 30, 32 5, 32 5 C30 3, 25 2, 20 2 C15 2, 10 3, 8 5 Z" fill="#ffffff" stroke="#374151" stroke-width="1"/>
-                                        </svg>
-                                        <div class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-xs text-gray-600 font-medium">24</div>
-                                    </div>
+                                    <!-- Add more teeth as needed -->
                                 </div>
                             </div>
                         </div>
@@ -504,7 +430,7 @@
                                     <div class="flex items-center gap-4 text-sm text-gray-600 mt-1">
                                         <span class="flex items-center gap-1">
                                             <i class="fas fa-calendar text-xs"></i>
-                                            January 15, 2024
+                                            1/15/2024
                                         </span>
                                     </div>
                                 </div>
@@ -535,7 +461,7 @@
                                     <div class="flex items-center gap-4 text-sm text-gray-600 mt-1">
                                         <span class="flex items-center gap-1">
                                             <i class="fas fa-calendar text-xs"></i>
-                                            August 20, 2023
+                                            8/20/2023
                                         </span>
                                     </div>
                                 </div>
@@ -566,7 +492,7 @@
                                     <div class="flex items-center gap-4 text-sm text-gray-600 mt-1">
                                         <span class="flex items-center gap-1">
                                             <i class="fas fa-calendar text-xs"></i>
-                                            February 10, 2023
+                                            2/10/2023
                                         </span>
                                         <span>Teeth: 30</span>
                                     </div>
@@ -595,78 +521,27 @@
         </div>
     </div>
 
-    <!-- New Plan Modal -->
-    <div id="new-plan-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden modal-backdrop">
-        <div class="bg-white rounded-xl shadow-2xl max-w-lg w-full mx-4 max-h-[90vh] overflow-y-auto">
-            <div class="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 rounded-t-xl">
-                <div class="flex items-center justify-between">
-                    <h3 class="text-xl font-bold text-gray-800">Create Treatment Plan</h3>
-                    <button onclick="closeModal('new-plan-modal')" class="p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg transition-colors">
-                        <i class="fas fa-times"></i>
-                    </button>
-                </div>
-            </div>
-            
-            <form class="p-6 space-y-6">
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2">Plan Title *</label>
-                    <input type="text" required class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors" placeholder="e.g., Root Canal Treatment, Comprehensive Restoration">
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Start Date *</label>
-                        <input type="date" required class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Estimated Completion</label>
-                        <input type="date" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
-                    </div>
-                </div>
-
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2">Estimated Cost ($)</label>
-                    <input type="number" min="0" step="0.01" placeholder="0" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
-                </div>
-
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2">Procedures</label>
-                    <textarea rows="4" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors" placeholder="Enter each procedure on a new line:&#10;• Root canal therapy&#10;• Crown placement&#10;• Follow-up examination"></textarea>
-                    <p class="text-xs text-gray-500 mt-1">Enter each procedure on a new line</p>
-                </div>
-            </form>
-
-            <div class="sticky bottom-0 bg-gray-50 px-6 py-4 rounded-b-xl border-t border-gray-200">
-                <div class="flex gap-3">
-                    <button type="submit" class="flex-1 bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors font-medium shadow-md hover:shadow-lg">
-                        Create Treatment Plan
-                    </button>
-                    <button type="button" onclick="closeModal('new-plan-modal')" class="bg-white border border-gray-300 text-gray-700 py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors font-medium">
-                        Cancel
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Oral Health Assessment Modal -->
-    <div id="oral-health-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden modal-backdrop">
-        <div class="bg-white rounded-xl shadow-2xl max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+    <div id="oral-health-modal" class="fixed inset-0 bg-black bg-opacity-50 modal-backdrop hidden flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
             <div class="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 rounded-t-xl">
                 <div class="flex items-center justify-between">
-                    <h3 class="text-xl font-bold text-gray-800">Edit Oral Health Assessment</h3>
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center gap-2">
+                        <i class="fas fa-heart text-red-500"></i>
+                        Edit Oral Health Assessment
+                    </h3>
                     <button onclick="closeModal('oral-health-modal')" class="p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg transition-colors">
                         <i class="fas fa-times"></i>
                     </button>
                 </div>
             </div>
             
-            <form class="p-6 space-y-6">
+            <div class="p-6 space-y-6">
                 <!-- Health Metrics -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">Gum Health</label>
-                        <select class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
+                        <select class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
                             <option value="excellent">Excellent</option>
                             <option value="good" selected>Good</option>
                             <option value="fair">Fair</option>
@@ -675,7 +550,7 @@
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">Oral Hygiene</label>
-                        <select class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
+                        <select class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
                             <option value="excellent">Excellent</option>
                             <option value="good">Good</option>
                             <option value="fair" selected>Fair</option>
@@ -684,14 +559,14 @@
                     </div>
                 </div>
 
-                <!-- Issues -->
+                <!-- Current Issues -->
                 <div>
                     <div class="flex items-center justify-between mb-3">
                         <label class="text-sm font-medium text-gray-700 flex items-center gap-2">
                             <i class="fas fa-exclamation-triangle text-red-500"></i>
                             Current Issues
                         </label>
-                        <button type="button" onclick="addIssueField()" class="text-blue-600 hover:text-blue-700 text-sm font-medium flex items-center gap-1 hover:bg-blue-50 px-2 py-1 rounded transition-colors">
+                        <button onclick="addIssueField()" class="text-blue-600 hover:text-blue-700 text-sm font-medium flex items-center gap-1 hover:bg-blue-50 px-2 py-1 rounded transition-colors">
                             <i class="fas fa-plus"></i>
                             Add Issue
                         </button>
@@ -699,19 +574,19 @@
                     <div id="issues-container" class="space-y-2">
                         <div class="flex items-center gap-2">
                             <input type="text" value="Gum inflammation" class="flex-1 border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
-                            <button type="button" onclick="removeField(this)" class="p-2 text-red-500 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors">
+                            <button onclick="removeField(this)" class="p-2 text-red-500 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors">
                                 <i class="fas fa-times"></i>
                             </button>
                         </div>
                         <div class="flex items-center gap-2">
                             <input type="text" value="Plaque buildup" class="flex-1 border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
-                            <button type="button" onclick="removeField(this)" class="p-2 text-red-500 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors">
+                            <button onclick="removeField(this)" class="p-2 text-red-500 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors">
                                 <i class="fas fa-times"></i>
                             </button>
                         </div>
                         <div class="flex items-center gap-2">
                             <input type="text" value="Cavity on tooth #19" class="flex-1 border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
-                            <button type="button" onclick="removeField(this)" class="p-2 text-red-500 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors">
+                            <button onclick="removeField(this)" class="p-2 text-red-500 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors">
                                 <i class="fas fa-times"></i>
                             </button>
                         </div>
@@ -722,7 +597,7 @@
                 <div>
                     <div class="flex items-center justify-between mb-3">
                         <label class="text-sm font-medium text-gray-700">Risk Factors</label>
-                        <button type="button" onclick="addRiskFactorField()" class="text-blue-600 hover:text-blue-700 text-sm font-medium flex items-center gap-1 hover:bg-blue-50 px-2 py-1 rounded transition-colors">
+                        <button onclick="addRiskFactorField()" class="text-blue-600 hover:text-blue-700 text-sm font-medium flex items-center gap-1 hover:bg-blue-50 px-2 py-1 rounded transition-colors">
                             <i class="fas fa-plus"></i>
                             Add Factor
                         </button>
@@ -730,13 +605,13 @@
                     <div id="risk-factors-container" class="space-y-2">
                         <div class="flex items-center gap-2">
                             <input type="text" value="Coffee consumption" class="flex-1 border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
-                            <button type="button" onclick="removeField(this)" class="p-2 text-red-500 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors">
+                            <button onclick="removeField(this)" class="p-2 text-red-500 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors">
                                 <i class="fas fa-times"></i>
                             </button>
                         </div>
                         <div class="flex items-center gap-2">
                             <input type="text" value="Irregular flossing" class="flex-1 border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
-                            <button type="button" onclick="removeField(this)" class="p-2 text-red-500 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors">
+                            <button onclick="removeField(this)" class="p-2 text-red-500 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors">
                                 <i class="fas fa-times"></i>
                             </button>
                         </div>
@@ -750,7 +625,7 @@
                             <i class="fas fa-check-circle text-green-500"></i>
                             Recommendations
                         </label>
-                        <button type="button" onclick="addRecommendationField()" class="text-blue-600 hover:text-blue-700 text-sm font-medium flex items-center gap-1 hover:bg-blue-50 px-2 py-1 rounded transition-colors">
+                        <button onclick="addRecommendationField()" class="text-blue-600 hover:text-blue-700 text-sm font-medium flex items-center gap-1 hover:bg-blue-50 px-2 py-1 rounded transition-colors">
                             <i class="fas fa-plus"></i>
                             Add Recommendation
                         </button>
@@ -758,39 +633,93 @@
                     <div id="recommendations-container" class="space-y-2">
                         <div class="flex items-center gap-2">
                             <input type="text" value="Increase flossing frequency to daily" class="flex-1 border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
-                            <button type="button" onclick="removeField(this)" class="p-2 text-red-500 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors">
+                            <button onclick="removeField(this)" class="p-2 text-red-500 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors">
                                 <i class="fas fa-times"></i>
                             </button>
                         </div>
                         <div class="flex items-center gap-2">
                             <input type="text" value="Use fluoride mouthwash" class="flex-1 border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
-                            <button type="button" onclick="removeField(this)" class="p-2 text-red-500 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors">
+                            <button onclick="removeField(this)" class="p-2 text-red-500 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors">
                                 <i class="fas fa-times"></i>
                             </button>
                         </div>
                         <div class="flex items-center gap-2">
                             <input type="text" value="Schedule cleaning every 6 months" class="flex-1 border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
-                            <button type="button" onclick="removeField(this)" class="p-2 text-red-500 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors">
+                            <button onclick="removeField(this)" class="p-2 text-red-500 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors">
                                 <i class="fas fa-times"></i>
                             </button>
                         </div>
                         <div class="flex items-center gap-2">
                             <input type="text" value="Complete filling on tooth #19" class="flex-1 border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
-                            <button type="button" onclick="removeField(this)" class="p-2 text-red-500 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors">
+                            <button onclick="removeField(this)" class="p-2 text-red-500 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors">
                                 <i class="fas fa-times"></i>
                             </button>
                         </div>
                     </div>
                 </div>
-            </form>
+            </div>
 
             <div class="sticky bottom-0 bg-gray-50 px-6 py-4 rounded-b-xl border-t border-gray-200">
                 <div class="flex gap-3">
-                    <button type="submit" class="flex-1 bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center justify-center gap-2">
+                    <button onclick="saveOralHealthAssessment()" class="flex-1 bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors font-medium shadow-md hover:shadow-lg flex items-center justify-center gap-2">
                         <i class="fas fa-save"></i>
                         Save Assessment
                     </button>
-                    <button type="button" onclick="closeModal('oral-health-modal')" class="bg-white border border-gray-300 text-gray-700 py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors font-medium">
+                    <button onclick="closeModal('oral-health-modal')" class="bg-white border border-gray-300 text-gray-700 py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors font-medium">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Plan Modal -->
+    <div id="new-plan-modal" class="fixed inset-0 bg-black bg-opacity-50 modal-backdrop hidden flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
+            <div class="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 rounded-t-xl">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-xl font-bold text-gray-800">Create Treatment Plan</h3>
+                    <button onclick="closeModal('new-plan-modal')" class="p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg transition-colors">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="p-6 space-y-6">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Plan Title *</label>
+                    <input type="text" id="plan-title" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors" placeholder="e.g., Root Canal Treatment, Comprehensive Restoration" required>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Start Date *</label>
+                        <input type="date" id="plan-start-date" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Estimated Completion</label>
+                        <input type="date" id="plan-end-date" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Estimated Cost ($)</label>
+                    <input type="number" id="plan-cost" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors" placeholder="0" min="0" step="0.01">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Procedures</label>
+                    <textarea id="plan-procedures" rows="4" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors" placeholder="Enter each procedure on a new line:&#10;• Root canal therapy&#10;• Crown placement&#10;• Follow-up examination"></textarea>
+                    <p class="text-xs text-gray-500 mt-1">Enter each procedure on a new line</p>
+                </div>
+            </div>
+
+            <div class="sticky bottom-0 bg-gray-50 px-6 py-4 rounded-b-xl border-t border-gray-200">
+                <div class="flex gap-3">
+                    <button onclick="createTreatmentPlan()" class="flex-1 bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors font-medium shadow-md hover:shadow-lg">
+                        Create Treatment Plan
+                    </button>
+                    <button onclick="closeModal('new-plan-modal')" class="bg-white border border-gray-300 text-gray-700 py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors font-medium">
                         Cancel
                     </button>
                 </div>
@@ -799,24 +728,31 @@
     </div>
 
     <!-- Add Treatment Modal -->
-    <div id="add-treatment-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden modal-backdrop">
-        <div class="bg-white rounded-lg p-6 max-w-md w-full mx-4">
-            <h3 class="text-lg font-bold mb-4">Add Treatment Record</h3>
+    <div id="add-treatment-modal" class="fixed inset-0 bg-black bg-opacity-50 modal-backdrop hidden flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
+            <div class="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 rounded-t-xl">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-xl font-bold text-gray-800">Add Treatment Record</h3>
+                    <button onclick="closeModal('add-treatment-modal')" class="p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg transition-colors">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
             
-            <form class="space-y-4">
+            <div class="p-6 space-y-4">
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1">Procedure</label>
-                    <input type="text" class="w-full border border-gray-300 rounded-md px-3 py-2" placeholder="e.g., Cleaning, Filling, Root Canal">
+                    <input type="text" id="treatment-procedure" class="w-full border border-gray-300 rounded-md px-3 py-2" placeholder="e.g., Cleaning, Filling, Root Canal">
                 </div>
 
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1">Date</label>
-                    <input type="date" class="w-full border border-gray-300 rounded-md px-3 py-2">
+                    <input type="date" id="treatment-date" class="w-full border border-gray-300 rounded-md px-3 py-2">
                 </div>
 
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1">Status</label>
-                    <select class="w-full border border-gray-300 rounded-md px-3 py-2">
+                    <select id="treatment-status" class="w-full border border-gray-300 rounded-md px-3 py-2">
                         <option value="completed">Completed</option>
                         <option value="in-progress">In Progress</option>
                         <option value="planned">Planned</option>
@@ -825,94 +761,68 @@
 
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1">Tooth Numbers (comma separated)</label>
-                    <input type="text" class="w-full border border-gray-300 rounded-md px-3 py-2" placeholder="e.g., 14, 15, 16">
+                    <input type="text" id="treatment-teeth" class="w-full border border-gray-300 rounded-md px-3 py-2" placeholder="e.g., 14, 15, 16">
                 </div>
 
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1">Cost ($)</label>
-                    <input type="number" class="w-full border border-gray-300 rounded-md px-3 py-2">
+                    <input type="number" id="treatment-cost" class="w-full border border-gray-300 rounded-md px-3 py-2">
                 </div>
 
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1">Notes</label>
-                    <textarea rows="3" class="w-full border border-gray-300 rounded-md px-3 py-2" placeholder="Add any additional notes about the treatment..."></textarea>
+                    <textarea id="treatment-notes" rows="3" class="w-full border border-gray-300 rounded-md px-3 py-2" placeholder="Add any additional notes about the treatment..."></textarea>
                 </div>
-            </form>
+            </div>
 
-            <div class="flex gap-2 mt-6">
-                <button type="submit" class="flex-1 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">
-                    Add Treatment
-                </button>
-                <button type="button" onclick="closeModal('add-treatment-modal')" class="bg-gray-300 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-400 transition-colors">
-                    Cancel
-                </button>
+            <div class="sticky bottom-0 bg-gray-50 px-6 py-4 rounded-b-xl border-t border-gray-200">
+                <div class="flex gap-2">
+                    <button onclick="addTreatment()" class="flex-1 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">
+                        Add Treatment
+                    </button>
+                    <button onclick="closeModal('add-treatment-modal')" class="bg-gray-300 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-400 transition-colors">
+                        Cancel
+                    </button>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Tooth Modal -->
-    <div id="tooth-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden modal-backdrop">
-        <div class="bg-white rounded-lg p-6 max-w-md w-full mx-4">
-            <h3 class="text-lg font-bold mb-4">Tooth #<span id="modal-tooth-number">1</span> Condition</h3>
-            
-            <form class="space-y-4">
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Condition</label>
-                    <select class="w-full border border-gray-300 rounded-md px-3 py-2">
-                        <option value="healthy">Healthy</option>
-                        <option value="decay">Decay</option>
-                        <option value="filling">Filling</option>
-                        <option value="crown">Crown</option>
-                        <option value="missing">Missing</option>
-                        <option value="implant">Implant</option>
-                        <option value="root-canal">Root Canal</option>
-                    </select>
-                </div>
-
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Severity</label>
-                    <select class="w-full border border-gray-300 rounded-md px-3 py-2">
-                        <option value="mild">Mild</option>
-                        <option value="moderate">Moderate</option>
-                        <option value="severe">Severe</option>
-                    </select>
-                </div>
-
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Date</label>
-                    <input type="date" class="w-full border border-gray-300 rounded-md px-3 py-2">
-                </div>
-
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Notes</label>
-                    <textarea rows="3" class="w-full border border-gray-300 rounded-md px-3 py-2" placeholder="Add any additional notes..."></textarea>
-                </div>
-            </form>
-
-            <div class="flex gap-2 mt-6">
-                <button type="submit" class="flex-1 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">
-                    Save
-                </button>
-                <button type="button" class="bg-red-600 text-white py-2 px-4 rounded-lg hover:bg-red-700 transition-colors">
-                    <i class="fas fa-trash"></i>
-                </button>
-                <button type="button" onclick="closeModal('tooth-modal')" class="bg-gray-300 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-400 transition-colors">
-                    Cancel
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <script src="resources/js/app.js"></script>
     <script>
-        // Additional modal functions for the new modals
+        // Modal functions
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Close modal when clicking backdrop
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('modal-backdrop')) {
+                const modal = e.target;
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Oral Health Assessment functions
         function addIssueField() {
             const container = document.getElementById('issues-container');
             const div = document.createElement('div');
             div.className = 'flex items-center gap-2 fade-in';
             div.innerHTML = `
                 <input type="text" placeholder="Enter issue..." class="flex-1 border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
-                <button type="button" onclick="removeField(this)" class="p-2 text-red-500 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors">
+                <button onclick="removeField(this)" class="p-2 text-red-500 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors">
                     <i class="fas fa-times"></i>
                 </button>
             `;
@@ -925,7 +835,7 @@
             div.className = 'flex items-center gap-2 fade-in';
             div.innerHTML = `
                 <input type="text" placeholder="Enter risk factor..." class="flex-1 border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
-                <button type="button" onclick="removeField(this)" class="p-2 text-red-500 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors">
+                <button onclick="removeField(this)" class="p-2 text-red-500 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors">
                     <i class="fas fa-times"></i>
                 </button>
             `;
@@ -938,7 +848,7 @@
             div.className = 'flex items-center gap-2 fade-in';
             div.innerHTML = `
                 <input type="text" placeholder="Enter recommendation..." class="flex-1 border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
-                <button type="button" onclick="removeField(this)" class="p-2 text-red-500 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors">
+                <button onclick="removeField(this)" class="p-2 text-red-500 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors">
                     <i class="fas fa-times"></i>
                 </button>
             `;
@@ -948,6 +858,64 @@
         function removeField(button) {
             button.parentElement.remove();
         }
+
+        function saveOralHealthAssessment() {
+            // Here you would collect all the form data and save it
+            alert('Oral Health Assessment saved successfully!');
+            closeModal('oral-health-modal');
+        }
+
+        // Treatment Plan functions
+        function createTreatmentPlan() {
+            const title = document.getElementById('plan-title').value;
+            const startDate = document.getElementById('plan-start-date').value;
+            
+            if (!title || !startDate) {
+                alert('Please fill in the required fields (Title and Start Date)');
+                return;
+            }
+            
+            // Here you would save the treatment plan
+            alert('Treatment Plan created successfully!');
+            closeModal('new-plan-modal');
+            
+            // Clear form
+            document.getElementById('plan-title').value = '';
+            document.getElementById('plan-start-date').value = '';
+            document.getElementById('plan-end-date').value = '';
+            document.getElementById('plan-cost').value = '';
+            document.getElementById('plan-procedures').value = '';
+        }
+
+        // Treatment functions
+        function addTreatment() {
+            const procedure = document.getElementById('treatment-procedure').value;
+            const date = document.getElementById('treatment-date').value;
+            
+            if (!procedure || !date) {
+                alert('Please fill in the required fields (Procedure and Date)');
+                return;
+            }
+            
+            // Here you would save the treatment
+            alert('Treatment record added successfully!');
+            closeModal('add-treatment-modal');
+            
+            // Clear form
+            document.getElementById('treatment-procedure').value = '';
+            document.getElementById('treatment-date').value = '';
+            document.getElementById('treatment-status').value = 'completed';
+            document.getElementById('treatment-teeth').value = '';
+            document.getElementById('treatment-cost').value = '';
+            document.getElementById('treatment-notes').value = '';
+        }
+
+        // Set default date to today
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('treatment-date').value = today;
+            document.getElementById('plan-start-date').value = today;
+        });
     </script>
 </body>
 </html>
